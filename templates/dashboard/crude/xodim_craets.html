@@ -1,0 +1,64 @@
+{% extends 'dashboard/base.html' %}
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+
+                <h4 class="card-title">
+
+                    <form method="POST" enctype="multipart/form-data" action="{% url 'staffCraet' %}">
+                    {% csrf_token%}
+                    <div class="mb-3 row">
+                    <label for="example-text-input" class="col-md-2 col-form-label">Ism</label>
+                    <div class="col-md-10">
+                        <input class="form-control" type="text" 
+
+                            id="example-text-input" name="l_name"> 
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="example-search-input" class="col-md-2 col-form-label">Familiya</label>
+                    <div class="col-md-10">
+                        <input class="form-control" type="search"
+                            id="example-search-input " name="f_name">
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="example-email-input" class="col-md-2 col-form-label">Yosh</label>
+                    <div class="col-md-10">
+                        <input class="form-control" type="number" name="age">
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="example-search-input" class="col-md-2 col-form-label">email</label>
+                    <div class="col-md-10">
+                        <input class="form-control" type="email"
+                            id="example-search-input " name="email">
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="example-search-input" class="col-md-2 col-form-label">Tel number </label>
+                    <div class="col-md-10">
+                        <input class="form-control" type="search"
+                            id="example-search-input " name="phone">
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="example-search-input" class="col-md-2 col-form-label">Manzil</label>
+                    <div class="col-md-10">
+                        <input class="form-control" type="search" id="example-search-input" name="address">
+                    </div>
+                </div>
+                
+                <button class="btn btn-secondary" style="width: 100px; font-size: 0.75rem; padding: 0.25rem; background-color: green; color: white;" type="submit">Jo'natish</button>
+                </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end col -->
+</div>
+{%endblock%}

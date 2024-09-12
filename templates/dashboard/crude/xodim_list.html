@@ -1,0 +1,60 @@
+{% extends 'dashboard/base.html' %}
+{% block content %}
+<div class="col-lg-15">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Xodimlar Ro'yxati</h4>
+            <!-- Search Form -->
+            <form method="get" action="{% url 'stafList' %}" class="mb-3">
+                <div class="input-group">
+                    <input type="text" name="q" value="{{ query }}" class="form-control" placeholder="Search...">
+                    <button type="submit" class="btn btn-primary">Qidirish</button>
+                </div>
+            </form>
+            <div class="table-responsive">
+                <table class="table table-dark mb-0">
+                    <thead>
+                        <tr>
+                            <th>Ism</th>
+                            <th>Familiya</th>
+                            <th>Tel</th>
+                            <th>Email</th>
+                            <th>O'chirish</th>
+                            <th>Yangilash</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for xodim in staff %}
+                        <tr>
+                            <td>{{ xodim.l_name }}</td>
+                            <td>{{ xodim.f_name }}</td>
+                            <td>{{ xodim.phone_number }}</td>
+                            <td>{{ xodim.email }}</td>
+                            <td>
+                                <form action="{% url 'StaffDelete' xodim.id %}" method="post">
+                                    {% csrf_token %}
+                                    <button type="submit" class="btn btn-danger">
+                                        <i class="fas fa-trash-alt"></i> O'chirish
+                                    </button>
+                                    
+                                </form>
+                            </td>
+                            <td>
+                                <a href="{% url 'update_Xodim' xodim.id %}" class="btn btn-warning">
+                                    <i class="fas fa-edit"></i> Yangilash
+                                </a>
+                                
+                            </td>
+                        </tr>
+                        {% empty %}
+                        <tr>
+                            <td colspan="6" class="text-center">No results found</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,52 @@
+{% extends 'dashboard/base.html' %}
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Update Xodim</h4>
+                <form method="POST" enctype="multipart/form-data" action="{% url 'update_Xodim' xodim.id %}">
+                    {% csrf_token %}
+                    <div class="mb-3 row">
+                        <label for="example-text-input" class="col-md-2 col-form-label">Name</label>
+                        <div class="col-md-10">
+                            <input class="form-control" type="text" id="example-text-input" name="name" value="{{ xodim.l_name }}"> 
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="example-search-input" class="col-md-2 col-form-label">Surname</label>
+                        <div class="col-md-10">
+                            <input class="form-control" type="text" id="example-search-input" name="surname" value="{{ xodim.f_name }}">
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="example-number-input" class="col-md-2 col-form-label">Age</label>
+                        <div class="col-md-10">
+                            <input class="form-control" type="number" id="example-number-input" name="age" value="{{ xodim.age }}">
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="example-email-input" class="col-md-2 col-form-label">Email</label>
+                        <div class="col-md-10">
+                            <input class="form-control" type="email" id="example-email-input" name="email" value="{{ xodim.email }}">
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="example-tel-input" class="col-md-2 col-form-label">Phone</label>
+                        <div class="col-md-10">
+                            <input class="form-control" type="text" id="example-tel-input" name="phone" value="{{ xodim.phone_number }}">
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="example-text-input" class="col-md-2 col-form-label">Address</label>
+                        <div class="col-md-10">
+                            <input class="form-control" type="text" id="example-text-input" name="address" value="{{ xodim.address }}">
+                        </div>
+                    </div>
+                    <button class="btn btn-secondary" type="submit">Update</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

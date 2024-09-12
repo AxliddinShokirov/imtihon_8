@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8d7da;
+        }
+        .container {
+            margin-top: 100px;
+        }
+        .alert {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="alert alert-danger text-center" role="alert">
+                    <h4 class="alert-heading">Error!</h4>
+                    <p>
+                        Yaroqsiz foydalanuvchi nomi yoki parol. Iltimos, qayta urinib ko'ring.</p>
+                    <hr>
+                    <a href="{% url 'login_user' %}" class="btn btn-danger">Kirish sahifasiga qayting</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

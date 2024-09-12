@@ -1,0 +1,33 @@
+{% extends 'dashboard/base.html' %}
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+
+                <h4 class="card-title">
+
+                    <form method="POST" enctype="multipart/form-data" action="{% url 'positionCraet' %}">
+                    {% csrf_token%}
+                    <div class="mb-3 row">
+                    <label for="example-text-input" class="col-md-2 col-form-label">Lavozim qo'shish</label>
+                    <div class="col-md-10">
+                        <input class="form-control" type="text" 
+
+                            id="example-text-input" name="title"> 
+                    </div>
+                    <button class="btn btn-secondary" type="submit" style="width: 100px; font-size: 0.75rem; padding: 0.25rem; background-color: green; color: white;">
+                        <i class="bi bi-send"></i> Jo'natish
+                    </button>
+                    
+
+                </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end col -->
+</div>
+{%endblock%}

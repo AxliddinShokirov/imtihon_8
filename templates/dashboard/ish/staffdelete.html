@@ -1,0 +1,12 @@
+{% extends 'dashboard/base.html' %}
+{% block content %}
+<div class="container mt-12">
+    <h2>Xodimlar Smenasini O'chirish</h2>
+    <p>Siz xodimlar smenasini o'chirishni xohlaysizmi {{ staff_shift.staff }}?</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger">Tasdiqlash</button>
+        <a href="{% url 'staff_shift_list' %}" class="btn btn-secondary">Bekor qilish</a>
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends 'dashboard/base.html' %}
+{% block content %}
+<div class="">
+    <h2>Xodimlar Smenalari</h2>
+    <a href="{% url 'staff_shift_create' %}" class="btn btn-primary mb-3">Yangi Xodimlar Smenasini Qo'shing</a>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Xodimlar</th>
+                <th>Lavozimi</th>
+                <th>Shift</th>
+                <th>Amallar</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for shift in staff_shifts %}
+            <tr>
+                <td>{{ shift.staff.l_name }}</td>
+                <td>{{ shift.position }}</td>
+                <td>{{ shift.shift }}</td>
+                <td>
+                    <a href="{% url 'staff_shift_update' shift.id %}" class="btn btn-warning btn-sm">Tahrirlash</a>
+                    <a href="{% url 'staff_shift_delete' shift.id %}" class="btn btn-danger btn-sm">O'chirish</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

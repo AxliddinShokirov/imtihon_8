@@ -1,0 +1,16 @@
+
+{%extends 'dashboard/base.html'%}
+{%block content%}
+<body>
+    <div class = "container mt-4">
+        <h1> Davomatni o'chirish</h1>
+        <p>Rostan ham ochirmoqchimisiz</p>
+        <form method = "POST">
+            {%csrf_token%}
+
+            <button type = "submit" class = "btn btn-danger">Ochirish</button>
+            <a href ="{%url 'Xodimlar_delete'%}" class = "btn btn-outline-secondary">Edit</a>
+        </form>
+
+    </div>
+{%endblock%}
